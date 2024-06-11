@@ -1,5 +1,6 @@
 package _3110ScoreOfAString;
 
+
 import java.util.stream.IntStream;
 
 class Solution {
