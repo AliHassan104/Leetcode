@@ -19,20 +19,15 @@ class Solution {
     }
 
     public static boolean arrayStringsAreEqualChatGPT(String[] word1, String[] word2) {
-        boolean flag = false;
         StringBuilder w1 = new StringBuilder();
         StringBuilder w2 = new StringBuilder();
-
-        for (int i = 0; i < word1.length; i++) {
-            w1.append(word1[i]);
+        for (String s : word1) {
+            w1.append(s);
         }
-        for (int i = 0; i < word2.length; i++) {
-            w2.append(word2[i]);
+        for (String s : word2) {
+            w2.append(s);
         }
-        if(w1.toString().equals(w2.toString())){
-            flag = true;
-        }
-        return flag;
+        return w1.toString().equals(w2.toString());
     }
 
     public static void main(String[] args) {
