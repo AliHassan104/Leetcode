@@ -1,5 +1,7 @@
 package _1672RichestCustomerWealth;
 
+import java.util.Arrays;
+
 public class Solution {
 
     public static int maximumWealth(int[][] accounts) {
@@ -18,6 +20,33 @@ public class Solution {
         return max;
     }
 
+
+    public static int maximumWealthChatGPT(int[][] accounts) {
+        int maxWealth = 0;  // Initialize the maximum wealth to 0
+
+        // Iterate through each customer's accounts
+        for (int[] customer : accounts) {
+            int currentWealth = 0;  // Initialize the current customer's wealth to 0
+
+            // Sum up the wealth of the current customer
+            for (int bank : customer) {
+                currentWealth += bank;
+            }
+
+            // Update maxWealth if the current customer's wealth is greater
+            maxWealth = Math.max(maxWealth, currentWealth);
+        }
+
+        // Return the maximum wealth found
+        return maxWealth;
+    }
+
+    public static int maximumWealthGemini(int[][] accounts) {
+        return Arrays.stream(accounts)
+                .mapToInt(row -> Arrays.stream(row).sum())
+                .max()
+                .orElse(0);
+    }
 
 
     public static void main(String[] args) {
@@ -60,7 +89,7 @@ Example 3:
 
 Input: accounts = [[2,8,7],[7,1,3],[1,9,5]]
 Output: 17
- 
+
 
 Constraints:
 
