@@ -32,7 +32,7 @@ public class Solution {
         return ans;
     }
 
-    public static String[] sortPeopleGemini(String[] names, int[] heights) {
+    public String[] sortPeopleGemini(String[] names, int[] heights) {
         Person[] people = new Person[names.length];
         for (int i = 0; i < names.length; i++) {
             people[i] = new Person(names[i], heights[i]);
@@ -45,13 +45,23 @@ public class Solution {
         return sortedNames;
     }
 
+    class Person {
+        String name;
+        int height;
+
+        public Person(String name, int height) {
+            this.name = name;
+            this.height = height;
+        }
+   }
+
     public static String[] sortPeopleChatGPT(String[] names, int[] heights) {
         int n = names.length;
-        List<Person> people = new ArrayList<>();
+        List<PersonA> people = new ArrayList<>();
         for (int i = 0; i < n; i++) {
-            people.add(new Person(names[i], heights[i]));
+            people.add(new PersonA(names[i], heights[i]));
         }
-        people.sort(Comparator.comparingInt(Person::getHeight).reversed());
+        people.sort(Comparator.comparingInt(PersonA::getHeightA).reversed());
         String[] sortedNames = new String[n];
         for (int i = 0; i < n; i++) {
             sortedNames[i] = people.get(i).getName();
@@ -59,11 +69,11 @@ public class Solution {
         return sortedNames;
     }
 
-    static class Person {
+    static class PersonA {
         private final String name;
         private final int height;
 
-        public Person(String name, int height) {
+        public PersonA(String name, int height) {
             this.name = name;
             this.height = height;
         }
@@ -72,7 +82,7 @@ public class Solution {
             return name;
         }
 
-        public int getHeight() {
+        public int getHeightA() {
             return height;
         }
     }
