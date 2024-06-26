@@ -1,7 +1,5 @@
 package _1431KidsWithTheGreatestNumberOfCandies;
 
-import jdk.nashorn.internal.runtime.ListAdapter;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
