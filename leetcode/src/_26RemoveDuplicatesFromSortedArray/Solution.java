@@ -1,4 +1,4 @@
-package array._26RemoveDuplicatesFromSortedArray;
+package _26RemoveDuplicatesFromSortedArray;
 
 import java.util.HashSet;
 import java.util.Set;
